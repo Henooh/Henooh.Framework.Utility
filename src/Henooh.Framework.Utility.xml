@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Henooh.Framework.Utility</name>
+    </assembly>
+    <members>
+        <member name="T:Henooh.Framework.Utility.A_NamespaceDoc">
+            <summary>
+            Provides access to utility classes commonly used in Henooh Framework.
+            </summary>
+            <remarks>
+            Henooh Framework Utility has common utilities with enhancements with common method implementations.
+            
+            Latest Update:      2020-06-26
+            Assembly Version: v1.02.02.000
+            </remarks>
+            <revisionhistory>
+            YYYY-MM-DD  AS#####  v#.##.##.###  Change Description
+            ==========  =======  ============  ============================================================================
+            2020-02-03  AS01273  v1.02.00.002  Initial Version
+            2020-02-05  AS01274  v1.02.00.003  Add additional infomration on remarks
+            2020-02-22  AS01286  v1.02.00.004  Create XML documentation on editing
+            2020-02-28  AS01288  v1.02.00.006  Set the XML documentation path relative
+            2020-03-13  AS01293  v1.02.00.007  Correct Incorrect revision history
+            2020-03-15  AS01294  v1.02.01.000  New release of Henooh.Framework.Utility
+            2020-06-24  AS01302  v1.02.01.003  Change the licensing to MIT License
+            2020-06-26  AS01303  v1.02.02.000  Released v1.2.1 of Henooh.Framework.Utility
+            </revisionhistory>
+        </member>
+        <member name="T:Henooh.Framework.Utility.FileSystem">
+            <summary>
+            Provides set of file system related utility classes that is designed to check for all conditions that could
+            cause an exception and return an error.
+            </summary>
+            <remarks>
+            
+            </remarks>
+            <visibility>public</visibility>
+            <revisionhistory>
+            YYYY-MM-DD  AS#####  v#.##.##.###  Change Description
+            ==========  =======  ============  ============================================================================
+            2016-10-14  AS00749  v1.00.00.015  Initial Version
+            2016-11-14  AS00776  v1.00.00.028  Added ConvertHtmlToPlainText method
+            2016-11-15  AS00777  v1.00.00.029  Renamed method to ConvertToText method, fixed revision history
+            2016-11-20  AS00781  v1.00.00.031  Modified ConvertToText method to remove blank spaces in the beginning
+            2017-01-31  AS00829  v1.00.00.043  Add XML comment to ConvertToText method, modify summary and remarks
+            2017-03-03  AS00844  v1.00.00.049  Remove unused using statements
+            2018-03-27  AS01035  v1.01.06.007  Rename HenoohWpfBase to Henooh.Framework.Wpf
+            2018-11-03  AS01098  v1.01.07.007  Implement GetBitmapFromBitmapSource method
+            2018-12-04  AS01121  v1.01.08.007  Change the access modifier for GetBitmapFromBitmapSource to public
+            2019-04-17  AS01178  v1.01.11.005  Resolve CA1822 by adding static prefix to methods that doe not use instance
+            2019-04-18  AS01179  v1.01.11.006  Resolve CA1052 Made the entire class static
+            2019-04-19  AS01180  v1.01.11.007  Resolve IDE0054 by using compound assignments on ConvertToText method
+            2019-08-06  AS01209  v1.01.13.004  Resolve CA1062 by validating parameter is non-null before using it
+            2019-08-08  AS01210  v1.01.13.005  Dispose the MemoryStream after use
+            2019-08-09  AS01211  v1.01.13.006  Check if BitmapSource is null at the beginning of GetBitmapFromBitmapSource
+            2019-09-24  AS01232  v1.01.15.008  Corrected the revision history
+            2019-12-12  AS01260  v1.01.18.008  Add CreateDirectory and GrantAccess methods
+            2020-01-28  AS01269  v1.02.00.000  Port from Henooh.Framework.Wpf to Henooh.Framework.Utility
+            2020-02-01  AS01272  v1.02.00.001  Enable system security by adding System.IO.FileSystem.AccessControl
+            2020-02-05  AS01274  v1.02.00.003  Change the class static
+            2020-02-28  AS01288  v1.02.00.006  Add Copy method with returns while catching exceptions
+            2020-03-13  AS01293  v1.02.00.007  Add XML comments in summary and remarks
+            2020-04-28  AS01299  v1.02.01.001  Fix the logic in Copy files and grant access to files
+            2020-06-11  AS01300  v1.02.01.002  Add XML comments to all public methods
+            </revisionhistory>
+        </member>
+        <member name="M:Henooh.Framework.Utility.FileSystem.CreateDirectory(System.String,System.Boolean)">
+            <summary>
+            Provides a way to check if a directory exists, and create one if it does not exist.
+            It is designed to handle all exceptions.
+            </summary>
+            <param name="aDirectoryPath"></param>
+            <param name="aIsPublic"></param>
+            <returns>
+            Returns 0 if the directory already exist, and did not need to create one.
+            Returns 1 if the directory is created, and when permissions was properly applied.
+            Returns 2 if the directory is created, but permissions was not applied.
+            Returns -1 if the directory was unable to be created.
+            </returns>
+        </member>
+        <member name="M:Henooh.Framework.Utility.FileSystem.Copy(System.String,System.String,System.Boolean)">
+            <summary>
+            Copies an existing file to a new file.
+            </summary>
+            <param name="aSourceFileName"></param>
+            <param name="aDestinationFileName"></param>
+            <param name="aOverwriteFlag"></param>
+            <returns>
+            Returns 0 if the file does not exist.
+            Returns 1 if the file does exist.
+            Returns -1 if the file was unable to be copied.
+            </returns>
+        </member>
+        <member name="M:Henooh.Framework.Utility.FileSystem.GrantAccess(System.String)">
+            <summary>
+            Grants full permission to a file or a directory.
+            </summary>
+            <param name="aPath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Henooh.Framework.Utility.FileSystem.GrantAccessToDirectory(System.String)">
+            <summary>
+            Grants full permission to a directory.
+            </summary>
+            <param name="aPath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Henooh.Framework.Utility.FileSystem.GrantAccessToFile(System.String)">
+            <summary>
+            Grants full permission to a file.
+            </summary>
+            <param name="aPath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Henooh.Framework.Utility.FileSystem.IsDirectory(System.String)">
+            <summary>
+            Detects if the given path is a directory.
+            </summary>
+            <param name="aPath"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Henooh.Framework.Utility.HenoohTimer">
+            <summary>
+            HenoohTimer provides the Timer component with Countdown component that shows TimeSpan of countdown.
+            </summary>
+            <remarks>
+            Henooh Timer is a timer based on interval basis.
+            </remarks>
+            <revisionhistory>
+            YYYY-MM-DD  AS#####  v#.##.##.###  Change Description
+            ==========  =======  ============  ============================================================================
+            2019-12-11  AS01259  v1.00.00.035  Initial Version
+            2019-12-12  AS01260  v1.00.00.036  Implement the Tick of the Timer
+            2020-02-27  AS01287  v1.02.00.005  Port HenoohTimer from HenoohUtility to Henooh.Framework.Utility
+            2020-03-13  AS01293  v1.02.00.007  Add XML comments in summary and remarks
+            2020-03-15  AS01294  v1.02.01.000  Remove unused using statements
+            </revisionhistory>
+        </member>
+        <member name="M:Henooh.Framework.Utility.HenoohTimer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Henooh.Framework.Utility.HenoohTimer"/> class.
+            </summary>
+        </member>
+        <member name="E:Henooh.Framework.Utility.HenoohTimer.Tick">
+            <summary>
+            Occurs when the timer interval has elasped.
+            </summary>
+        </member>
+        <member name="E:Henooh.Framework.Utility.HenoohTimer.PropertyChanged">
+            <summary>
+            Provides INotifyPropertyChanged implementation according to Bindings.
+            </summary>
+        </member>
+        <member name="P:Henooh.Framework.Utility.HenoohTimer.Interval">
+            <summary>
+            Gets or sets the period of time between timer ticks.
+            </summary>
+        </member>
+        <member name="P:Henooh.Framework.Utility.HenoohTimer.IsEnabled">
+            <summary>
+            Gets or sets a value that indicates whether the timer is running.
+            </summary>
+        </member>
+        <member name="P:Henooh.Framework.Utility.HenoohTimer.Timer">
+            <summary>
+            Internal timer that updates remaining time until the next trigger.
+            </summary>
+        </member>
+        <member name="P:Henooh.Framework.Utility.HenoohTimer.LastTriggeredTime">
+            <summary>
+            Internal timer that keeps track of when the last trigger was set.
+            </summary>
+        </member>
+        <member name="P:Henooh.Framework.Utility.HenoohTimer.CountdownUntilNextInterval">
+            <summary>
+            Displays the Remaining time until the next interval.
+            </summary>
+        </member>
+        <member name="M:Henooh.Framework.Utility.HenoohTimer.NotifyPropertyChanged(System.String)">
+            <summary>
+            Notifies that a property has changed.
+            </summary>
+            <param name="aInfo"></param>
+        </member>
+        <member name="M:Henooh.Framework.Utility.HenoohTimer.Start">
+            <summary>
+            Starts the <see cref="T:Henooh.Framework.Utility.HenoohTimer"/>.
+            </summary>
+        </member>
+        <member name="M:Henooh.Framework.Utility.HenoohTimer.Stop">
+            <summary>
+            Stops the <see cref="T:Henooh.Framework.Utility.HenoohTimer"/>.
+            </summary>
+        </member>
+        <member name="M:Henooh.Framework.Utility.HenoohTimer.UpdateHenoohTimer(System.Object,System.EventArgs)">
+            <summary>
+            Updates the property values for the Timer class.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+    </members>
+</doc>

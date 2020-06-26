@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Henooh.Framework.Utility", "Henooh.Framework.Utility.csproj", "{E80AE0C9-41FC-43F7-9E2E-764D4209902D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E80AE0C9-41FC-43F7-9E2E-764D4209902D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E80AE0C9-41FC-43F7-9E2E-764D4209902D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E80AE0C9-41FC-43F7-9E2E-764D4209902D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E80AE0C9-41FC-43F7-9E2E-764D4209902D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {98468C85-0B62-4E25-B898-1755BA61F715}
+	EndGlobalSection
+EndGlobal
