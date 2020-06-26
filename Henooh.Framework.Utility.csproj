@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ApplicationIcon>UtilityIcon.ico</ApplicationIcon>
+    <Version>1.2.2</Version>
+    <Authors>Henooh</Authors>
+    <Company>Henooh</Company>
+    <Description>Henooh.Framework.Utility provides a set of utility classes.</Description>
+    <Copyright>2020</Copyright>
+    <PackageLicenseFile></PackageLicenseFile>
+    <PackageIcon>UtilityIcon.png</PackageIcon>
+    <PackageIconUrl />
+    <PackageTags>Henooh Framework Utility</PackageTags>
+    <PackageReleaseNotes>Thanks for trying Henooh Framework. Any comment would be appreciated. Enjoy.</PackageReleaseNotes>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>Henooh.Framework.Utility.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="System.IO.FileSystem.AccessControl" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="res\drawable\UtilityIcon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
